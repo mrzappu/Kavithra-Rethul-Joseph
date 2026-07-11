@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Kavithra & Rethul Joseph - Wedding Invitation</title>
+    
+    <!-- SEO / Social Media Preview -->
+    <meta name="description" content="You're invited to celebrate the marriage of Kavithra and Rethul Joseph on August 31, 2026.">
+    <meta property="og:title" content="Wedding of Kavithra & Rethul Joseph">
+    <meta property="og:description" content="You're invited to celebrate the marriage of Kavithra and Rethul Joseph.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Wedding of Kavithra & Rethul Joseph">
+    <meta name="twitter:description" content="You're invited to celebrate our special day.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ========== VIDEO INTRO SCREEN ========== -->
+    <div id="intro-screen">
+        <video id="intro-video" autoplay muted playsinline>
+            <source src="assets/852322_3d_Illustration_Abstract_1920x1080.mp4" type="video/mp4">
+        </video>
+        <div class="intro-overlay"></div>
+        <div class="intro-content">
+            <p class="intro-tagline">You are invited</p>
+            <h1 class="intro-names">Kavithra <span class="intro-and"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="rgba(255,255,255,0.7)" stroke="rgba(255,255,255,0.7)" stroke-width="1.5"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg></span> Rethul</h1>
+            <p class="intro-date">31 . 08 . 2026</p>
+            <div class="intro-line"></div>
+        </div>
+    </div>
+
+    <!-- ========== MAIN WEDDING PAGE ========== -->
+    <div id="main-page" class="hidden">
+
+        <!-- Background layers -->
+        <div class="bg-layer gradient-bg"></div>
+        <div class="bg-layer pattern-overlay"></div>
+        <div class="bg-layer noise-overlay"></div>
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+        <div class="glow-orb orb-3"></div>
+
+        <!-- Floating particles (JS generated) -->
+        <div id="particles-container"></div>
+
+        <!-- Floating Nav Arrows (in page margin, outside card) -->
+        <!-- Right arrow: go to reception -->
+        <button class="page-nav-btn right-nav" id="go-reception-btn" aria-label="View Reception" style="display:none;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+            <span>Reception</span>
+        </button>
+        <!-- Left arrow: go back to wedding -->
+        <button class="page-nav-btn left-nav" id="go-wedding-btn" aria-label="Back to Wedding" style="display:none;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+            <span>Wedding</span>
+        </button>
+
+        <!-- Main Content — Card Stage (both cards sit in same spot) -->
+        <main class="main-container">
+            <div class="card-stage" id="card-stage">
+
+                <!-- WEDDING CARD -->
+                <div class="glass-card wedding-card" id="glass-card-wedding">
+
+                    <!-- Subtle Vector Floral Designs -->
+                    <div class="vector-flower top-left">
+                        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10,10 C30,0 50,10 60,30 C70,10 90,0 90,20 C90,40 70,50 60,70 C50,90 30,100 10,90 C-10,80 0,60 20,50 C0,40 -10,20 10,10 Z" fill="rgba(255, 158, 187, 0.15)"/>
+                            <path d="M10,10 C25,5 40,15 45,30 C50,15 65,5 70,20 C70,35 55,45 45,60 C35,75 20,80 5,70 C-5,60 0,45 15,35 C0,25 -5,15 10,10 Z" fill="rgba(255, 158, 187, 0.25)"/>
+                            <circle cx="35" cy="35" r="5" fill="#FF9EBB"/>
+                        </svg>
+                    </div>
+                    <div class="vector-flower bottom-right">
+                        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M90,90 C70,100 50,90 40,70 C30,90 10,100 10,80 C10,60 30,50 40,30 C50,10 70,0 90,10 C110,20 100,40 80,50 C100,60 110,80 90,90 Z" fill="rgba(255, 158, 187, 0.15)"/>
+                            <path d="M90,90 C75,95 60,85 55,70 C50,85 35,95 30,80 C30,65 45,55 55,40 C65,25 80,20 95,30 C105,40 100,55 85,65 C100,75 105,85 90,90 Z" fill="rgba(255, 158, 187, 0.25)"/>
+                            <circle cx="65" cy="65" r="5" fill="#FF9EBB"/>
+                        </svg>
+                    </div>
+
+                    <div class="card-glow-top"></div>
+                    <div class="card-glow-left"></div>
+
+                    <!-- Cross Icon -->
+                    <div class="cross-icon anim-item" data-delay="600" style="margin-bottom: 1.5rem; position: relative; display: inline-flex; align-items: center; justify-content: center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FF9EBB" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="position: relative; z-index: 2; filter: drop-shadow(0px 2px 4px rgba(255, 158, 187, 0.4));">
+                            <path d="M12 3v18"/>
+                            <path d="M7 8h10"/>
+                        </svg>
+                        <div class="cross-glow" style="position: absolute; inset: -15px; background: #FF9EBB; border-radius: 50%; filter: blur(20px); opacity: 0.35; z-index: 1;"></div>
+                        <!-- Sparkles -->
+                        <svg class="sparkle" viewBox="0 0 24 24" style="position: absolute; width: 14px; top: -5px; right: -10px; fill: #FF9EBB; opacity: 0.7;"><path d="M12 0l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg>
+                        <svg class="sparkle" viewBox="0 0 24 24" style="position: absolute; width: 10px; bottom: 5px; left: -12px; fill: #FF9EBB; opacity: 0.5;"><path d="M12 0l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg>
+                    </div>
+
+                    <!-- Header Text -->
+                    <div class="invite-text anim-item" data-delay="800" style="margin-bottom: 2rem;">
+                        <p style="font-size: 0.9rem; font-weight: 600; color: #50433C; letter-spacing: 0.25em; margin-bottom: 0.8rem; border-top: 1px solid rgba(80,67,60,0.15); border-bottom: 1px solid rgba(80,67,60,0.15); padding: 0.5rem 0;">Together with our families</p>
+                        <p style="font-family: var(--font-script); font-size: 2.2rem; color: #FF9EBB; text-transform: none; letter-spacing: 0; line-height: 1.2; margin-bottom: 0.2rem;">We joyfully invite you to</p>
+                        <p style="font-size: 0.75rem; letter-spacing: 0.15em; opacity: 0.8;">Celebrate the wedding of</p>
+                    </div>
+
+                    <!-- Bride Name -->
+                    <div class="name-container anim-item" data-delay="1200">
+                        <h1 class="bride-name" id="bride-name">Kavithra</h1>
+                    </div>
+
+                    <!-- Decorative Divider -->
+                    <div class="heart-divider anim-item" data-delay="1500">
+                        <div class="divider-line left"></div>
+                        <svg class="divider-heart" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#FF9EBB" stroke="#FF9EBB" stroke-width="1.5"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg>
+                        <div class="divider-line right"></div>
+                    </div>
+
+                    <!-- Groom Name -->
+                    <div class="name-container anim-item" data-delay="1800">
+                        <h1 class="groom-name" id="groom-name">Rethul Joseph</h1>
+                    </div>
+
+                    <!-- Event Details (Wedding) -->
+                    <div class="event-details anim-item" data-delay="2100">
+                        <div class="detail-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF9EBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+                            <div class="detail-text">
+                                <span class="label">Date</span>
+                                <span class="value">August 31, 2026 &middot; 10:00 AM</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF9EBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+                            <div class="detail-text">
+                                <span class="label">Venue</span>
+                                <span class="value">CSI Church Inchivila, Thiruvananthapuram</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map Button (Wedding) -->
+                    <div class="map-button-container anim-item" data-delay="2300">
+                        <a href="https://www.google.com/maps/dir/8.4738048,76.9982464/CSI+Church+Inchivila,+85P6%2B6V4,+Kazhakootam+-+Inchivila+Bypass,+Thiruvananthapuram,+Parassala,+Kerala+695502/@8.4011514,76.9990326,12z/data=!3m1!4b1!4m9!4m8!1m1!4e1!1m5!1m1!1s0x3b05ab138ecadc8b:0x207c5c2a63f5437c!2m2!1d77.1622024!2d8.3354564?entry=ttu" target="_blank" rel="noopener noreferrer" class="map-button">
+                            <div class="map-icon-box">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#50433C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg>
+                            </div>
+                            <div class="map-text">
+                                <span class="title">Wedding Location</span>
+                                <span class="subtitle">Open in Google Maps</span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(80,67,60,0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                        </a>
+                    </div>
+
+                    <!-- Wedding Countdown -->
+                    <div class="separator anim-item" data-delay="2400" style="margin:1.5rem 0;"></div>
+                    <div class="countdown-section anim-item" data-delay="2500">
+                        <p class="countdown-label">Counting down to the Wedding</p>
+                        <div class="countdown-timer" id="w-countdown">
+                            <div class="time-block">
+                                <span class="time-value" id="w-days">00</span>
+                                <span class="time-unit">Days</span>
+                            </div>
+                            <span class="time-sep">:</span>
+                            <div class="time-block">
+                                <span class="time-value" id="w-hours">00</span>
+                                <span class="time-unit">Hours</span>
+                            </div>
+                            <span class="time-sep">:</span>
+                            <div class="time-block">
+                                <span class="time-value" id="w-mins">00</span>
+                                <span class="time-unit">Mins</span>
+                            </div>
+                            <span class="time-sep">:</span>
+                            <div class="time-block">
+                                <span class="time-value" id="w-secs">00</span>
+                                <span class="time-unit">Secs</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div><!-- end wedding card -->
+
+                <!-- RECEPTION CARD (starts hidden, revealed on nav btn click) -->
+                <div class="glass-card reception-card" id="glass-card-reception">
+
+                    <div class="vector-flower top-left">
+                        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10,10 C30,0 50,10 60,30 C70,10 90,0 90,20 C90,40 70,50 60,70 C50,90 30,100 10,90 C-10,80 0,60 20,50 C0,40 -10,20 10,10 Z" fill="rgba(255, 158, 187, 0.15)"/>
+                            <path d="M10,10 C25,5 40,15 45,30 C50,15 65,5 70,20 C70,35 55,45 45,60 C35,75 20,80 5,70 C-5,60 0,45 15,35 C0,25 -5,15 10,10 Z" fill="rgba(255, 158, 187, 0.25)"/>
+                            <circle cx="35" cy="35" r="5" fill="#FF9EBB"/>
+                        </svg>
+                    </div>
+                    <div class="vector-flower bottom-right">
+                        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M90,90 C70,100 50,90 40,70 C30,90 10,100 10,80 C10,60 30,50 40,30 C50,10 70,0 90,10 C110,20 100,40 80,50 C100,60 110,80 90,90 Z" fill="rgba(255, 158, 187, 0.15)"/>
+                            <path d="M90,90 C75,95 60,85 55,70 C50,85 35,95 30,80 C30,65 45,55 55,40 C65,25 80,20 95,30 C105,40 100,55 85,65 C100,75 105,85 90,90 Z" fill="rgba(255, 158, 187, 0.25)"/>
+                            <circle cx="65" cy="65" r="5" fill="#FF9EBB"/>
+                        </svg>
+                    </div>
+
+                    <div class="card-glow-top"></div>
+                    <div class="card-glow-left"></div>
+
+                    <!-- Cross Icon -->
+                    <div class="cross-icon anim-item" data-delay="200" style="margin-top: 1.5rem; margin-bottom: 1.5rem; position: relative; display: inline-flex; align-items: center; justify-content: center;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#FF9EBB" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" style="position: relative; z-index: 2; filter: drop-shadow(0px 2px 4px rgba(255, 158, 187, 0.4));">
+                            <path d="M12 3v18"/>
+                            <path d="M7 8h10"/>
+                        </svg>
+                        <div class="cross-glow" style="position: absolute; inset: -15px; background: #FF9EBB; border-radius: 50%; filter: blur(20px); opacity: 0.35; z-index: 1;"></div>
+                        <!-- Sparkles -->
+                        <svg class="sparkle" viewBox="0 0 24 24" style="position: absolute; width: 14px; top: -5px; right: -10px; fill: #FF9EBB; opacity: 0.7;"><path d="M12 0l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg>
+                        <svg class="sparkle" viewBox="0 0 24 24" style="position: absolute; width: 10px; bottom: 5px; left: -12px; fill: #FF9EBB; opacity: 0.5;"><path d="M12 0l2 8 8 2-8 2-2 8-2-8-8-2 8-2z"/></svg>
+                    </div>
+
+                    <div class="invite-text anim-item" data-delay="300" style="margin-bottom: 1rem;">
+                        <p style="font-size: 0.9rem; font-weight: 600; color: #50433C; letter-spacing: 0.25em; border-top: 1px solid rgba(80,67,60,0.15); border-bottom: 1px solid rgba(80,67,60,0.15); padding: 0.5rem 0; display: inline-block;">Join us to celebrate at the</p>
+                    </div>
+                    <div class="name-container anim-item" data-delay="500">
+                        <h1 class="reception-title">Wedding Reception</h1>
+                    </div>
+
+                    <div class="event-details anim-item" data-delay="700" style="margin-top:2rem;">
+                        <div class="detail-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF9EBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg>
+                            <div class="detail-text">
+                                <span class="label">Time</span>
+                                <span class="value">August 31, 2026 &middot; 4:00 PM</span>
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FF9EBB" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>
+                            <div class="detail-text">
+                                <span class="label">Venue</span>
+                                <span class="value">St Antony Church Poozhikunne Auditorium</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="map-button-container anim-item" data-delay="900">
+                        <a href="https://www.google.com/maps/place/St.+Anthony's+Church+Poozhikkunnu+(Sathyan+nagar),Trivandrum+Kerala/@8.4744409,76.9872408,985m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3b05bb0ac10f504f:0x3a7530c2af185aa9!8m2!3d8.4744356!4d76.9898211!16s%2Fg%2F11scbdszkk!5m1!1e1?entry=ttu&g_ep=EgoyMDI2MDcwOC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="map-button">
+                            <div class="map-icon-box">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#50433C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.106 5.553a2 2 0 0 0 1.788 0l3.659-1.83A1 1 0 0 1 21 4.619v12.764a1 1 0 0 1-.553.894l-4.553 2.277a2 2 0 0 1-1.788 0l-4.212-2.106a2 2 0 0 0-1.788 0l-3.659 1.83A1 1 0 0 1 3 19.381V6.618a1 1 0 0 1 .553-.894l4.553-2.277a2 2 0 0 1 1.788 0z"/><path d="M15 5.764v15"/><path d="M9 3.236v15"/></svg>
+                            </div>
+                            <div class="map-text">
+                                <span class="title">Reception Location</span>
+                                <span class="subtitle">Open in Google Maps</span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgba(80,67,60,0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                        </a>
+                    </div>
+
+                    <div class="separator anim-item" data-delay="1100" style="margin-bottom:2rem;"></div>
+
+                    <!-- Countdown -->
+                    <div class="countdown-section anim-item" data-delay="1300">
+                        <p class="countdown-label">Counting down to the Reception</p>
+                        <div class="countdown-timer" id="r-countdown">
+                            <div class="time-block">
+                                <span class="time-value" id="r-days">00</span>
+                                <span class="time-unit">Days</span>
+                            </div>
+                            <span class="time-sep">:</span>
+                            <div class="time-block">
+                                <span class="time-value" id="r-hours">00</span>
+                                <span class="time-unit">Hours</span>
+                            </div>
+                            <span class="time-sep">:</span>
+                            <div class="time-block">
+                                <span class="time-value" id="r-mins">00</span>
+                                <span class="time-unit">Mins</span>
+                            </div>
+                            <span class="time-sep">:</span>
+                            <div class="time-block">
+                                <span class="time-value" id="r-secs">00</span>
+                                <span class="time-unit">Secs</span>
+                            </div>
+                        </div>
+                        <button id="addToCalendar" class="calendar-btn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="M12 14v4"/><path d="M10 16h4"/></svg>
+                            Add to Calendar
+                        </button>
+                    </div>
+
+                    <div class="footer-note anim-item" data-delay="1500" style="margin-top:1rem;">
+                        <p>We look forward to celebrating with you!</p>
+                    </div>
+                </div><!-- end reception card -->
+
+            </div><!-- end card-stage -->
+        </main>
+
+
+
+        <!-- Audio Control -->
+        <div class="audio-control">
+            <button id="audio-toggle" class="audio-btn" aria-label="Toggle music">
+                <svg id="music-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                <div id="audio-waves" class="waves">
+                    <span class="wave"></span>
+                    <span class="wave"></span>
+                    <span class="wave"></span>
+                </div>
+            </button>
+            <audio id="bg-audio" loop preload="auto" autoplay>
+                <source src="assets/audio.mp4" type="audio/mp4">
+            </audio>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

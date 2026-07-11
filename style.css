@@ -1,0 +1,934 @@
+/* ============================================
+   KAVITHRA & RETHUL WEDDING — CLEAN CSS
+   ============================================ */
+
+:root {
+    --text-primary: #50433C;
+    --accent-pink: #FF9EBB;
+    --accent-pink-light: rgba(255, 158, 187, 0.15);
+    --card-bg: rgba(255, 255, 255, 0.07);
+    --card-border: rgba(255, 255, 255, 0.3);
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-script: 'Corinthia', cursive;
+    --font-sans: 'Inter', -apple-system, sans-serif;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family: var(--font-serif);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    background: #F9F6F0;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ============================================
+   VIDEO INTRO SCREEN
+   ============================================ */
+
+#intro-screen {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+#intro-screen.fade-out {
+    opacity: 0;
+    transform: scale(1.05);
+    pointer-events: none;
+}
+
+#intro-video {
+    position: absolute;
+    top: 50%; left: 50%;
+    min-width: 100%; min-height: 100%;
+    width: auto; height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.intro-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        135deg,
+        rgba(30, 20, 15, 0.55) 0%,
+        rgba(60, 40, 30, 0.4) 50%,
+        rgba(30, 20, 15, 0.6) 100%
+    );
+    z-index: 1;
+}
+
+.intro-content {
+    position: absolute;
+    z-index: 2;
+    bottom: 3rem;
+    left: 3rem;
+    text-align: left;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(30px) translateX(-20px);
+    animation: introFadeIn 3s ease 0.8s forwards;
+}
+
+.intro-tagline {
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.35em;
+    font-size: 0.8rem;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.intro-names {
+    font-family: var(--font-script);
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5rem;
+}
+
+.intro-and {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+}
+
+.intro-date {
+    font-family: var(--font-sans);
+    letter-spacing: 0.4em;
+    font-size: 1rem;
+    font-weight: 300;
+    margin-bottom: 1.5rem;
+    opacity: 0.85;
+}
+
+.intro-line {
+    width: 0;
+    height: 1px;
+    background: rgba(255,255,255,0.5);
+    margin: 0; /* removed auto margin to keep it left-aligned */
+    animation: lineExpand 2s ease 2s forwards;
+}
+
+@keyframes introFadeIn {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes lineExpand {
+    to { width: 120px; }
+}
+
+/* ============================================
+   MAIN PAGE (Hidden until intro ends)
+   ============================================ */
+
+#main-page {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+#main-page.hidden {
+    display: none;
+}
+
+/* ============================================
+   BACKGROUND LAYERS
+   ============================================ */
+
+.bg-layer {
+    position: fixed;
+    inset: 0;
+    z-index: -10;
+    pointer-events: none;
+}
+
+.gradient-bg {
+    background: linear-gradient(135deg, #F9F6F0 0%, #F1E9DE 50%, #E6D8C3 100%);
+}
+
+.pattern-overlay {
+    opacity: 0.1;
+    background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 158, 187, 0.15) 2px, rgba(255, 158, 187, 0.15) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255, 158, 187, 0.15) 2px, rgba(255, 158, 187, 0.15) 4px);
+    background-size: 80px 80px;
+}
+
+.noise-overlay {
+    opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.glow-orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(60px);
+    z-index: -9;
+    pointer-events: none;
+    animation: orbFloat 12s ease-in-out infinite;
+}
+
+.orb-1 {
+    width: 450px; height: 450px;
+    background: radial-gradient(circle, rgba(255, 140, 170, 0.6) 0%, transparent 70%);
+    top: 5%; left: 5%;
+}
+
+.orb-2 {
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(255, 158, 187, 0.65) 0%, transparent 70%);
+    bottom: 5%; right: 5%;
+    animation-delay: -6s;
+}
+
+.orb-3 {
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(255, 200, 210, 0.5) 0%, transparent 70%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: -3s;
+}
+
+@keyframes orbFloat {
+    0%, 100% { transform: translate(0, 0); }
+    33% { transform: translate(15px, -20px); }
+    66% { transform: translate(-10px, 15px); }
+}
+
+/* ============================================
+   FLOATING PARTICLES (hearts & sparkles)
+   ============================================ */
+
+.particle {
+    position: fixed;
+    z-index: -8;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.particle svg {
+    display: block;
+}
+
+/* ============================================
+   GLASS CARD
+   ============================================ */
+
+.main-container {
+    width: 100%;
+    max-width: 860px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 10;
+}
+
+/* Both cards sit in the same spot, one visible at a time */
+.card-stage {
+    width: 100%;
+    position: relative;
+    overflow: hidden; /* stops hidden reception card from causing scroll */
+}
+
+.glass-card {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    /* Start as a small pill — JS will animate open */
+    max-width: 0;
+    min-height: 120px;
+    max-height: 120px;
+    border-radius: 60px;
+    opacity: 0;
+    /* Glass effect */
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(23px);
+    -webkit-backdrop-filter: blur(23px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow:
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5),
+        inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 0 4px 2px rgba(255, 255, 255, 0.2);
+    /* Transition for the card expansion */
+    transition:
+        max-width 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+        min-height 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s,
+        max-height 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s,
+        border-radius 1s cubic-bezier(0.22, 1, 0.36, 1) 0.2s,
+        opacity 0.8s ease,
+        padding 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s;
+    padding: 0;
+}
+
+.glass-card.expanded {
+    max-width: min(860px, calc(100vw - 32px));
+    min-height: auto;
+    max-height: 9999px;
+    border-radius: 40px;
+    opacity: 1;
+    padding: 3rem 1.5rem;
+}
+
+/* Reception card — hidden behind, slides in from right on nav click */
+.reception-card {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    pointer-events: none;
+    transform: translateX(100%);
+    opacity: 0;
+    z-index: 5;
+}
+
+.reception-card.active {
+    pointer-events: auto;
+    transform: translateX(0);
+    opacity: 1;
+    transition:
+        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.5s ease;
+}
+
+.reception-card.slide-out {
+    transform: translateX(100%);
+    opacity: 0;
+    transition:
+        transform 0.55s cubic-bezier(0.55, 0, 1, 0.45),
+        opacity 0.4s ease;
+}
+
+/* Wedding card — slides out left when reception is shown */
+.wedding-card.slide-out-left {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition:
+        transform 0.55s cubic-bezier(0.55, 0, 1, 0.45),
+        opacity 0.4s ease;
+}
+
+.wedding-card.slide-in-left {
+    transform: translateX(0);
+    opacity: 1;
+    transition:
+        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 0.5s ease;
+}
+
+/* Floating Page Nav Buttons — in the page margin, outside the card */
+.page-nav-btn {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    background: rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 158, 187, 0.4);
+    color: #50433C;
+    border-radius: 16px;
+    padding: 1rem 0.7rem;
+    font-family: var(--font-sans);
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(255, 158, 187, 0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    z-index: 100;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.page-nav-btn.visible {
+    opacity: 1;
+    pointer-events: auto;
+    animation: navBtnPop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.page-nav-btn:hover {
+    background: rgba(255, 158, 187, 0.2);
+    box-shadow: 0 6px 28px rgba(255, 158, 187, 0.4);
+    transform: translateY(-50%) scale(1.05);
+}
+
+.page-nav-btn span {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    font-size: 0.58rem;
+}
+
+.right-nav {
+    right: max(10px, calc(50% - 470px));
+}
+
+.left-nav {
+    left: max(10px, calc(50% - 470px));
+}
+
+@keyframes navBtnPop {
+    from { opacity: 0; transform: translateY(-50%) scale(0.7); }
+    to   { opacity: 1; transform: translateY(-50%) scale(1); }
+}
+
+/* VECTOR FLORAL DESIGNS */
+.vector-flower {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity 1.5s ease 1.5s, transform 2s ease 1s;
+}
+
+.glass-card.expanded .vector-flower {
+    opacity: 0.8;
+}
+
+.vector-flower.top-left {
+    top: -20px;
+    left: -20px;
+    transform: scale(0.8) rotate(-15deg);
+}
+
+.glass-card.expanded .vector-flower.top-left {
+    transform: scale(1) rotate(0deg);
+}
+
+.vector-flower.bottom-right {
+    bottom: -20px;
+    right: -20px;
+    transform: scale(0.8) rotate(15deg);
+}
+
+.glass-card.expanded .vector-flower.bottom-right {
+    transform: scale(1) rotate(0deg);
+}
+
+.vector-flower svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 4px 6px rgba(255, 158, 187, 0.2));
+}
+
+/* Cross & Sparkles */
+.cross-glow {
+    animation: pulseGlow 3s ease-in-out infinite alternate;
+}
+
+.sparkle {
+    animation: twinkle 2s ease-in-out infinite alternate;
+}
+.sparkle:nth-of-type(2) {
+    animation-delay: 1s;
+    animation-duration: 2.5s;
+}
+
+@keyframes pulseGlow {
+    from { opacity: 0.25; filter: blur(15px); transform: scale(0.95); }
+    to { opacity: 0.45; filter: blur(22px); transform: scale(1.05); }
+}
+
+@keyframes twinkle {
+    0% { opacity: 0.2; transform: scale(0.8) rotate(0deg); }
+    100% { opacity: 0.9; transform: scale(1.1) rotate(15deg); }
+}
+
+.card-glow-top {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+    z-index: 20;
+    pointer-events: none;
+}
+
+.card-glow-left {
+    position: absolute;
+    top: 0; left: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), transparent, rgba(255, 255, 255, 0.3));
+    z-index: 20;
+    pointer-events: none;
+}
+
+/* ============================================
+   CONTENT ANIMATION — items fade in sequentially
+   ============================================ */
+
+.anim-item {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    position: relative;
+    z-index: 10;
+}
+
+.anim-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================
+   BISMILLAH TEXT — clip-path reveal
+   ============================================ */
+
+.header-text {
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+.header-text p {
+    font-size: clamp(1.2rem, 4vw, 2.5rem);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    direction: ltr;
+    /* Start hidden to the right */
+    clip-path: inset(0% 0% 0% 100%);
+    opacity: 0;
+    transition: clip-path 1.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease;
+}
+
+.header-text.revealed p {
+    clip-path: inset(0% 0% 0% 0%);
+    opacity: 1;
+}
+
+/* ============================================
+   HEART ICON (top)
+   ============================================ */
+
+.heart-icon {
+    position: relative;
+    display: inline-flex;
+    margin-bottom: 2rem;
+}
+
+.heart-icon svg {
+    position: relative;
+    z-index: 1;
+}
+
+.heart-glow {
+    position: absolute;
+    inset: -10px;
+    background: #FF9EBB;
+    border-radius: 50%;
+    filter: blur(25px);
+    opacity: 0.4;
+    z-index: 0;
+}
+
+/* ============================================
+   TYPOGRAPHY
+   ============================================ */
+
+.invite-text {
+    margin-bottom: 1.5rem;
+}
+
+.invite-text p {
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: clamp(0.65rem, 2vw, 0.85rem);
+    color: rgba(80, 67, 60, 0.7);
+    padding: 0 1rem;
+}
+
+.name-container h1 {
+    font-family: var(--font-script);
+    font-size: clamp(5rem, 15vw, 9rem);
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--text-primary);
+}
+
+/* Letter-by-letter animation for names */
+.name-letter {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    white-space: pre;
+}
+
+.name-letter.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ============================================
+   HEART DIVIDER (between names)
+   ============================================ */
+
+.heart-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin: 1rem 0;
+}
+
+.divider-line {
+    height: 1px;
+    width: 60px;
+}
+
+.divider-line.left {
+    background: linear-gradient(to right, transparent, rgba(80, 67, 60, 0.4));
+}
+
+.divider-line.right {
+    background: linear-gradient(to left, transparent, rgba(80, 67, 60, 0.4));
+}
+
+.divider-heart {
+    animation: heartPulse 2s infinite;
+}
+
+@keyframes heartPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@media (min-width: 640px) {
+    .divider-line { width: 100px; }
+}
+
+/* ============================================
+   SEPARATOR LINE
+   ============================================ */
+
+.separator {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, rgba(80, 67, 60, 0.2), transparent);
+    margin: 2rem 0;
+    transform: scaleX(0);
+    transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.separator.visible {
+    transform: scaleX(1);
+}
+
+/* ============================================
+   EVENT DETAILS
+   ============================================ */
+
+.event-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.detail-item svg {
+    flex-shrink: 0;
+}
+
+.detail-text {
+    text-align: center;
+}
+
+.detail-text .label {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(80, 67, 60, 0.6);
+    margin-bottom: 0.15rem;
+}
+
+.detail-text .value {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+/* ============================================
+   MAP BUTTON
+   ============================================ */
+
+.map-button-container {
+    margin-bottom: 2.5rem;
+}
+
+.map-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.6rem 1.2rem 0.6rem 0.6rem;
+    background: rgba(80, 67, 60, 0.05);
+    border: 1px solid rgba(80, 67, 60, 0.1);
+    border-radius: 18px;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.map-button:hover {
+    background: rgba(80, 67, 60, 0.1);
+    border-color: rgba(255, 158, 187, 0.5);
+    transform: translateY(-1px);
+}
+
+.map-icon-box {
+    background: white;
+    padding: 0.5rem;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.04);
+    display: flex;
+}
+
+.map-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.map-text .title {
+    font-family: var(--font-sans);
+    font-weight: 500;
+    font-size: 0.85rem;
+}
+
+.map-text .subtitle {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    color: rgba(80, 67, 60, 0.5);
+}
+
+/* ============================================
+   COUNTDOWN TIMER
+   ============================================ */
+
+.countdown-section {
+    margin-bottom: 2.5rem;
+}
+
+.countdown-label {
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.75rem;
+    margin-bottom: 1.2rem;
+    color: rgba(80, 67, 60, 0.7);
+}
+
+.countdown-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.time-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time-value {
+    font-size: clamp(2rem, 6vw, 2.8rem);
+    font-weight: 300;
+    line-height: 1;
+}
+
+.time-unit {
+    font-family: var(--font-sans);
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(80, 67, 60, 0.5);
+    margin-top: 0.4rem;
+}
+
+.time-sep {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: rgba(80, 67, 60, 0.25);
+    margin-top: -1rem;
+}
+
+.calendar-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 1.5rem;
+    background: transparent;
+    border: 1px solid var(--accent-pink);
+    color: var(--text-primary);
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    border-radius: 99px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.calendar-btn:hover {
+    background: var(--accent-pink);
+    color: white;
+    transform: translateY(-1px);
+}
+
+/* ============================================
+   BOTTOM FLOURISH & FOOTER
+   ============================================ */
+
+.bottom-flourish {
+    margin: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.bottom-flourish svg {
+    width: 150px;
+    height: auto;
+}
+
+.footer-note {
+    margin-top: 1rem;
+}
+
+.footer-note p {
+    font-style: italic;
+    font-size: 1rem;
+    color: rgba(80, 67, 60, 0.7);
+}
+
+/* ============================================
+   AUDIO CONTROL
+   ============================================ */
+
+.audio-control {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 100;
+    opacity: 0;
+    animation: audioFadeIn 0.8s ease 1s forwards;
+}
+
+@keyframes audioFadeIn {
+    to { opacity: 1; }
+}
+
+.audio-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    position: relative;
+    transition: all 0.3s ease;
+    color: var(--text-primary);
+}
+
+.audio-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.waves {
+    position: absolute;
+    display: flex;
+    gap: 3px;
+    height: 16px;
+    align-items: flex-end;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.wave {
+    width: 3px;
+    background: var(--accent-pink);
+    border-radius: 3px;
+    animation: waveAnim 0.9s ease-in-out infinite;
+}
+
+.wave:nth-child(2) { animation-delay: 0.15s; }
+.wave:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes waveAnim {
+    0%, 100% { height: 4px; }
+    50% { height: 16px; }
+}
+
+.audio-btn.playing #music-icon {
+    opacity: 0;
+}
+
+.audio-btn.playing .waves {
+    opacity: 1;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (min-width: 640px) {
+    .glass-card.expanded {
+        padding: 3.5rem 3rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .glass-card.expanded {
+        padding: 4rem 5rem;
+        border-radius: 50px;
+    }
+}
